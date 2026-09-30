@@ -126,3 +126,10 @@ Before opening or updating a PR:
 ## Known Issues
 
 - Dark-mode input styling: browser autofill produces white backgrounds in dark mode ([TailwindCSS#8679](https://github.com/tailwindlabs/tailwindcss/discussions/8679)).
+
+## Documentation Entry Rules
+
+- Frontend documentation links must use `src/utils/docs.ts` and its `getEmbeddedDocsUrl` helper. Do not read or introduce a deployment-configured documentation base URL.
+- Build links from the current frontend language. Map frontend `ja` to the documentation site's `jp` locale and preserve the requested documentation path.
+- DocsButton, the sidebar platform-docs entry, login help, and pages reusing DocsButton must open documentation in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
+- When adding a documentation entry, reuse the shared helper and manually check the target path and language in `zh`, `en`, `ja`, and `ko`.

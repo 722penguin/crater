@@ -168,7 +168,9 @@ export const IngressPanel = ({ namespacedName, jobType }: IngressPanelProps) => 
         items={ingressList || []}
         renderItem={renderIngressItem}
         isLoading={isLoading}
-        docsButton={<DocsButton title={'帮助文档'} url={`toolbox/external-access/ingress-rule`} />}
+        docsButton={
+          <DocsButton titleKey="docsButton.helpDocs" url={`toolbox/external-access/ingress-rule`} />
+        }
         addButton={
           <Button onClick={handleAddIngress} disabled={isCreating}>
             <Plus className="size-4" />

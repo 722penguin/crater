@@ -2,7 +2,8 @@
   "Links": {
     "userGuide": "用户指南",
     "adminGuide": "管理员指南",
-    "getStarted": "开始使用"
+    "getStarted": "开始使用",
+    "latestOnlineDocs": "点击这里查看最新在线文档"
 },
   "Fumadocs": {
     "search": "搜索",
@@ -14,7 +15,8 @@
     "nextPage": "下一页",
     "previousPage": "上一页",
     "chooseTheme": "选择主题",
-    "editOnGithub": "在 GitHub 上编辑"
+    "editOnGithub": "在 GitHub 上编辑",
+    "viewLatestDocs": "查看最新文档"
 },
   "HeroSection": {
     "title": "Crater · 云原生智算平台",
@@ -25,6 +27,10 @@
     "readDocs": "阅读文档"
     },
     "altText": "Crater 平台"
+  },
+  "EmbeddedDocsNotice": {
+    "description": "当前为随本系统部署的文档。最新在线文档可能包含更新信息，但其中的功能、配置或操作步骤可能与当前部署版本不一致，请结合当前系统版本判断是否适用。",
+    "viewLatest": "查看最新在线文档"
   },
   "Footer": {
     "copyright": "版权所有 2023-{year} The Crater Project Team, RAIDS-Lab。",

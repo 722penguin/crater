@@ -25,6 +25,7 @@ import {use} from 'react';
 import {setRequestLocale} from 'next-intl/server';
 import {useTranslations} from 'next-intl';
 import { locales } from '@/i18n/config';
+import { isEmbeddedDocsBuild } from '@/lib/docs-display';
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({
@@ -35,12 +36,23 @@ export async function generateStaticParams() {
 export default function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params);
   setRequestLocale(lang);
+  const tLinks = useTranslations('Links');
   const tFooter = useTranslations('Footer');
   const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen text-gray-900 dark:text-gray-100">
       <main>
+        {isEmbeddedDocsBuild && (
+          <a
+            href={`https://raids-lab.github.io/crater/${lang}/`}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="block bg-blue-600 px-4 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700"
+          >
+            {tLinks('latestOnlineDocs')}
+          </a>
+        )}
         <HeroSection />
         <WhyChooseSection />
         <CoreCapabilities />

@@ -72,3 +72,11 @@ For `website/` Helm deployment/install/upgrade commands involving `oci://ghcr.io
 - Check links, examples, terminology, and chart version placeholders.
 - Ask the developer to manually read the changed docs and judge whether key context, steps, and operational details are complete.
 - If frontend/UI docs changed, include screenshots in the PR when relevant to the user-visible behavior.
+
+## Embedded And Online Documentation Rules
+
+- The website is built in two modes. The frontend-bound build sets `CRATER_DOCS_EMBEDDED=true`; the standalone GitHub Pages build leaves it unset.
+- The top notice, the home-page latest-online-docs link, and the document-page latest-docs action must all use the shared `isEmbeddedDocsBuild` condition. They appear only in the frontend-bound build and must be hidden on GitHub Pages.
+- The home-page link points to the current language's online documentation home. A document-page link points to the same language and document path on GitHub Pages.
+- Keep the warning meaning consistent in `messages/en.json`, `zh.json`, `jp.json`, and `ko.json`: online documentation may be newer, but its features, configuration, or procedures may differ from the deployed version, so users must judge applicability against their current version.
+- When changing these entry points, verify both build modes and all four languages, including the banner, home-page link, and document-page action.

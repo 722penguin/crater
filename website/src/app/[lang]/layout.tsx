@@ -24,6 +24,8 @@ import { InternalLinkUpdater } from '@/components/internal-link-updater';
 import {routing} from '@/i18n/routing';
 import {setRequestLocale, getMessages} from 'next-intl/server';
 import { locales, localeNames } from '@/i18n/config';
+import { EmbeddedDocsNotice } from '@/components/embedded-docs-notice';
+import { isEmbeddedDocsBuild } from '@/lib/docs-display';
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -63,6 +65,7 @@ export default async function Layout({
             }}
 
           >
+            {isEmbeddedDocsBuild && <EmbeddedDocsNotice lang={lang} />}
             {children}
             <InternalLinkUpdater />
           </RootProvider>

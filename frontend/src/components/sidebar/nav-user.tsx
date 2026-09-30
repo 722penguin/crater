@@ -57,13 +57,12 @@ import { Role } from '@/services/api/auth'
 import useIsAdmin from '@/hooks/use-admin'
 import { useAuth } from '@/hooks/use-auth'
 
+import { getEmbeddedDocsUrl } from '@/utils/docs'
 import { getUserPseudonym } from '@/utils/pseudonym'
 import { atomUserContext, atomUserInfo, globalHideUsername, globalLastView } from '@/utils/store'
-import { configUrlWebsiteBaseAtom } from '@/utils/store/config'
 import { useTheme } from '@/utils/theme'
 
 export function NavUser() {
-  const website = useAtomValue(configUrlWebsiteBaseAtom)
   const { isMobile } = useSidebar()
   const user = useAtomValue(atomUserInfo)
   const context = useAtomValue(atomUserContext)
@@ -147,9 +146,15 @@ export function NavUser() {
                   {t('navUser.personalPage')}
                 </Link>
               </DropdownMenuItem> */}
-              <DropdownMenuItem onClick={() => window.open(website)}>
-                <BookOpenIcon />
-                {t('navUser.platformDocs')}
+              <DropdownMenuItem asChild>
+                <a
+                  href={getEmbeddedDocsUrl(i18n.resolvedLanguage || i18n.language || 'zh')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BookOpenIcon />
+                  {t('navUser.platformDocs')}
+                </a>
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => window.open('https://github.com/raids-lab/crater/issues')}

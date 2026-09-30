@@ -185,7 +185,7 @@ function LoginPage() {
               <DocsButton
                 variant="ghost"
                 className="dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/85 dark:hover:text-primary-foreground bg-white text-black hover:bg-slate-200 hover:text-black"
-                title="平台文档"
+                titleKey="docsButton.platformDocs"
                 url=""
               />
             </div>

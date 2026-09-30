@@ -27,7 +27,7 @@ export const configAtom = atomWithStorage<AppConfig>(
   CONFIG_STORAGE_KEY,
   {
     version: '',
-    url: { apiBase: '', document: '' },
+    url: { apiBase: '' },
     grafana: {
       overview: { main: '', schedule: '', network: '' },
       node: { basic: '', nvidia: '' },
@@ -56,8 +56,6 @@ export const apiGetConfig = async () => {
 export const configAPIBaseAtom = atom((get) => get(configAtom).url.apiBase || '')
 
 export const configAppVersionAtom = atom((get) => get(configAtom).version)
-
-export const configUrlWebsiteBaseAtom = atom((get) => get(configAtom).url.document)
 
 // 派生原子 - 按类别导出
 export const configGrafanaOverviewAtom = atom((get) => get(configAtom).grafana.overview)

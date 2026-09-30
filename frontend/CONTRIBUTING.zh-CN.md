@@ -126,3 +126,10 @@ src/
 ## 已知问题
 
 - 暗色模式输入框样式：浏览器自动填充会在暗色模式下产生白色背景（[TailwindCSS#8679](https://github.com/tailwindlabs/tailwindcss/discussions/8679)）。
+
+## 文档入口规范
+
+- 前端文档链接必须使用 `src/utils/docs.ts` 中的 `getEmbeddedDocsUrl`，不要读取或新增由部署配置提供的文档基础地址。
+- 文档地址必须根据当前前端语言生成。前端 `ja` 要映射为文档站的 `jp`，并保留入口对应的文档路径。
+- DocsButton、侧栏平台文档、登录帮助，以及复用 DocsButton 的页面，统一使用 `target="_blank"` 和 `rel="noopener noreferrer"` 在新标签页打开。
+- 新增文档入口时必须复用统一 helper，并在 `zh`、`en`、`ja`、`ko` 四种语言下人工检查目标路径和语言是否正确。

@@ -215,8 +215,6 @@ frontendConfig:
   url:
     # -- Backend API prefix (not modifiable currently)
     apiPrefix: "/api/v1"
-    # -- Documentation base URL
-    document: "https://raids-lab.github.io/crater/zh"
   # -- Grafana dashboard configurations
   # References: https://github.com/raids-lab/crater/tree/main/grafana-dashboards
   grafana:

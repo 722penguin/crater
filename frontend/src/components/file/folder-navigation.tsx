@@ -334,7 +334,7 @@ export default function FolderNavigation({
         title={t('folderNavigation.pageTitle.title')}
         description={t('folderNavigation.pageTitle.description')}
       >
-        <DocsButton title="阅读文档" url="file/file/" />
+        <DocsButton titleKey="docsButton.readDocs" url="file/file/" />
       </PageTitle>
       <div
         className={cn('mt-6 grid gap-6', {

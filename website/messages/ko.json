@@ -2,7 +2,12 @@
   "Links": {
     "userGuide": "사용자 가이드",
     "adminGuide": "관리자 가이드",
-    "getStarted": "시작하기"
+    "getStarted": "시작하기",
+    "latestOnlineDocs": "여기를 클릭하여 최신 온라인 문서 보기"
+  },
+  "EmbeddedDocsNotice": {
+    "description": "현재 시스템과 함께 배포된 문서입니다. 최신 온라인 문서에는 업데이트된 정보가 포함될 수 있지만 기능, 구성 또는 절차가 현재 배포 버전과 다를 수 있으므로 현재 시스템 버전에 적용되는지 확인하세요.",
+    "viewLatest": "최신 온라인 문서 보기"
   },
   "Fumadocs": {
     "search": "검색",
@@ -14,7 +19,8 @@
     "nextPage": "다음 페이지",
     "previousPage": "이전 페이지",
     "chooseTheme": "테마 선택",
-    "editOnGithub": "GitHub 에서 편집"
+    "editOnGithub": "GitHub 에서 편집",
+    "viewLatestDocs": "최신 문서 보기"
   },
   "HeroSection": {
     "title": "Crater · 클라우드 네이티브 지능 컴퓨팅 플랫폼",

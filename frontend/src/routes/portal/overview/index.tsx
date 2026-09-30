@@ -345,7 +345,7 @@ function Overview() {
                 className="shrink-0"
               />
             ) : null}
-            <DocsButton title="平台文档" url="" />
+            <DocsButton titleKey="docsButton.platformDocs" url="" />
             <ListedNewJobButton mode="all" />
           </div>
         </PageTitle>

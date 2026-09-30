@@ -1,8 +1,7 @@
 {
   "version": "1.0.0",
   "url": {
-    "apiPrefix": "/api/v1",
-    "document": "https://raids-lab.github.io/crater/zh"
+    "apiPrefix": "/api/v1"
   },
   "grafana": {
     "overview": {

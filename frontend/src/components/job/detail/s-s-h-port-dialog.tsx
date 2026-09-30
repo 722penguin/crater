@@ -118,7 +118,7 @@ export function SSHPortDialog({
           </div>
         )}
         <DialogFooter className="mt-2">
-          <DocsButton title="帮助文档" url="toolbox/ssh/ssh-func" />
+          <DocsButton titleKey="docsButton.helpDocs" url="toolbox/ssh/ssh-func" />
         </DialogFooter>
       </DialogContent>
     </Dialog>

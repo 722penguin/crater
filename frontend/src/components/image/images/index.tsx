@@ -48,6 +48,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
 
 import VisibilityBadge, { Visibility, visibilityTypes } from '@/components/badge/visibility-badge'
+import DocsButton from '@/components/button/docs-button'
 import { TimeDistance } from '@/components/custom/time-distance'
 import ImageLabel from '@/components/label/image-label'
 import TooltipLink from '@/components/label/tooltip-link'
@@ -417,6 +418,7 @@ export const ImageListTable: FC<ImageListTableProps> = ({
             />
           </DialogContent>
         </Dialog>
+        <DocsButton titleKey="docsButton.viewDocs" url="image/imageList/" />
         {!isAdminMode ? (
           <Button
             variant="default"

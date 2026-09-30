@@ -156,7 +156,12 @@ export function NodeportPanel({ namespacedName }: NodeportPanelProps) {
       <ExternalAccessList
         items={nodeportList}
         renderItem={renderNodeportItem}
-        docsButton={<DocsButton title={'帮助文档'} url={`toolbox/external-access/nodeport-rule`} />}
+        docsButton={
+          <DocsButton
+            titleKey="docsButton.helpDocs"
+            url={`toolbox/external-access/nodeport-rule`}
+          />
+        }
         addButton={
           <Button onClick={handleAddNodeport} disabled={isCreating}>
             <Plus className="size-4" />

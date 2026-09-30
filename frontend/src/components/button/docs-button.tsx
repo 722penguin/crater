@@ -14,23 +14,35 @@
  * limitations under the License.
  */
 import { VariantProps } from 'class-variance-authority'
-import { useAtomValue } from 'jotai'
 import { BookOpenIcon } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import { Button, buttonVariants } from '@/components/ui/button'
 
-import { configUrlWebsiteBaseAtom } from '@/utils/store/config'
+import { getEmbeddedDocsUrl } from '@/utils/docs'
 
 import { cn } from '@/lib/utils'
 
 type DocsButtonProps = React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
-    title: string
     url: string
-  }
+  } & (
+    | { title: string; titleKey?: never }
+    | {
+        title?: never
+        titleKey:
+          | 'docsButton.viewDocs'
+          | 'docsButton.jobTemplateDocs'
+          | 'docsButton.platformDocs'
+          | 'docsButton.readDocs'
+          | 'docsButton.helpDocs'
+          | 'docsButton.readNow'
+      }
+  )
 
-const DocsButton = ({ title, url, variant, className, ...props }: DocsButtonProps) => {
-  const website = useAtomValue(configUrlWebsiteBaseAtom)
+const DocsButton = ({ title, titleKey, url, variant, className, ...props }: DocsButtonProps) => {
+  const { t, i18n } = useTranslation()
+  const language = i18n.resolvedLanguage || i18n.language || 'zh'
   return (
     <Button
       variant={variant ?? 'secondary'}
@@ -38,9 +50,9 @@ const DocsButton = ({ title, url, variant, className, ...props }: DocsButtonProp
       {...props}
       asChild
     >
-      <a href={`${website}/docs/user/${url}`} target="_blank" rel="noopener noreferrer">
+      <a href={getEmbeddedDocsUrl(language, url)} target="_blank" rel="noopener noreferrer">
         <BookOpenIcon />
-        {title}
+        {titleKey ? t(titleKey) : title}
       </a>
     </Button>
   )

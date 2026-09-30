@@ -18,7 +18,6 @@ export interface AppConfig {
   version: string
   url: {
     apiBase: string
-    document: string
   }
   grafana: {
     overview: {

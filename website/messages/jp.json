@@ -2,7 +2,12 @@
   "Links": {
     "userGuide": "ユーザーガイド",
     "adminGuide": "管理者ガイド",
-    "getStarted": "利用開始"
+    "getStarted": "利用開始",
+    "latestOnlineDocs": "ここをクリックして最新のオンラインドキュメントを見る"
+  },
+  "EmbeddedDocsNotice": {
+    "description": "現在のシステムとともにデプロイされたドキュメントです。最新のオンラインドキュメントには更新情報が含まれる場合がありますが、機能、設定、操作手順が現在のデプロイバージョンと異なる可能性があります。現在のシステムバージョンに適用できるか確認してください。",
+    "viewLatest": "最新のオンラインドキュメントを見る"
   },
   "Fumadocs": {
     "search": "検索",
@@ -14,7 +19,8 @@
     "nextPage": "次のページ",
     "previousPage": "前のページ",
     "chooseTheme": "テーマを選択",
-    "editOnGithub": "GitHub で編集"
+    "editOnGithub": "GitHub で編集",
+    "viewLatestDocs": "最新のドキュメントを見る"
   },
   "HeroSection": {
     "title": "Crater・クラウドネイティブ AI コンピューティングプラットフォーム",

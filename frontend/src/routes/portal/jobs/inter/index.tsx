@@ -319,7 +319,7 @@ function RouteComponent() {
       ]}
     >
       <div className="flex flex-row gap-3">
-        <DocsButton title="查看文档" url="quick-start/interactive" />
+        <DocsButton titleKey="docsButton.viewDocs" url="quick-start/interactive" />
         <ListedNewJobButton mode="inter" />
       </div>
     </RemoteDataTable>

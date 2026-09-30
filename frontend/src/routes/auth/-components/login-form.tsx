@@ -20,6 +20,7 @@ import { useAtomValue, useSetAtom } from 'jotai'
 import { HTTPError } from 'ky'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
@@ -69,8 +70,8 @@ import {
 } from '@/services/error_code_legacy'
 import { IErrorResponse, IResponse } from '@/services/types'
 
+import { getEmbeddedDocsUrl } from '@/utils/docs'
 import { atomPrivacyAccepted, atomUserContext, atomUserInfo, useResetStore } from '@/utils/store'
-import { configUrlWebsiteBaseAtom } from '@/utils/store/config'
 
 export type LoginSearch = {
   redirect?: string
@@ -131,7 +132,7 @@ export function LoginForm({
   const setUserState = useSetAtom(atomUserInfo)
   const setAccount = useSetAtom(atomUserContext)
   const { resetAll } = useResetStore()
-  const website = useAtomValue(configUrlWebsiteBaseAtom)
+  const { i18n } = useTranslation()
 
   const setPrivacyAccepted = useSetAtom(atomPrivacyAccepted)
   const privacyAccepted = useAtomValue(atomPrivacyAccepted)
@@ -317,14 +318,23 @@ export function LoginForm({
             <AlertDialogTitle>账号未激活</AlertDialogTitle>
             <AlertDialogDescription>
               第一次登录平台时，需要从 LDAP 门户同步用户信息，请参考「
-              <a href={`${website}/docs/user/quick-start/login`}>平台访问指南</a>
+              <a
+                href={getEmbeddedDocsUrl(
+                  i18n.resolvedLanguage || i18n.language || 'zh',
+                  'quick-start/login'
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                平台访问指南
+              </a>
               」激活您的账号。
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>取消</AlertDialogCancel>
             <AlertDialogAction asChild>
-              <DocsButton title="立即阅读" url="quick-start/login" />
+              <DocsButton titleKey="docsButton.readNow" url="quick-start/login" />
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
